@@ -1,0 +1,7 @@
+<?xml version='1.0' ?>
+<launch>
+  <!-- Publish URDF file in robot_description topic -->
+  <include file="$(find-pkg-share aws_robomaker_small_warehouse_world)/launch/publish_urdf.launch.py"/>
+  <!-- Read robot_description an dspawn in gazebo running sim -->
+  <include file="$(find-pkg-share aws_robomaker_small_warehouse_world)/launch/spawn_factory_ros2.launch.py"/>
+</launch>
