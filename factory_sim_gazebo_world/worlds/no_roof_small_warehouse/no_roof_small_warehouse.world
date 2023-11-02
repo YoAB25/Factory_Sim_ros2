@@ -573,7 +573,573 @@
             <publish_rate>1000</publish_rate>
         </plugin>
     </model>
+
+    <model name="conveyor_belt_6">
+        <pose>-3.989316 -1.260457 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_6">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_6">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_6::belt_visual</parent>
+            <child>conveyorbelt_moving_6::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_6" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv6</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
+
+    <model name="conveyor_belt_7">
+        <pose>-5.182224 -1.260457 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_7">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_7">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_7::belt_visual</parent>
+            <child>conveyorbelt_moving_7::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_7" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv7</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
+
+    <model name="conveyor_belt_8">
+        <pose>-6.356115 -1.258015 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_8">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_8">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_8::belt_visual</parent>
+            <child>conveyorbelt_moving_8::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_8" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv8</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
+
+    <model name="conveyor_belt_9">
+        <pose>-7.537606 -1.257890 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_9">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_9">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_9::belt_visual</parent>
+            <child>conveyorbelt_moving_9::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_9" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv9</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
+
+    <model name="conveyor_belt_10">
+        <pose>-2.799608 -1.263694 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_10">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_10">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_10::belt_visual</parent>
+            <child>conveyorbelt_moving_10::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_10" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv10</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
     
+    <model name="conveyor_belt_11">
+        <pose>5.580262 -1.267404 0 0 0 1.57</pose>
+        <model name="conveyorbelt_fixed_11">          
+            <static>true</static>
+            <link name="belt_visual">
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
+                    <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                    <geometry>
+                        <mesh>
+                            <scale>1 1 1</scale>
+                            <uri>model://conveyor_belt/meshes/conveyor_belt.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+        <model name="conveyorbelt_moving_11">
+            <allow_auto_disable>0</allow_auto_disable>
+            <static>false</static>
+            <pose>0 0 0.741 0 0 0.0</pose>
+            <link name="belt_moving">
+                <inertial>
+                    <mass>100.0</mass>
+                    <inertia>
+                        <ixx>0.0</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.0</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.0</izz>
+                    </inertia>
+                </inertial>
+                <collision name="belt_collision">
+                    <geometry>
+                        <box>
+                            <size>0.425 1.2 0.00001</size>
+                        </box>
+                    </geometry>
+                    <surface>
+                        <friction>
+                            <ode>
+                                <mu>100.0</mu>
+                                <mu2>100.0</mu2>
+                            </ode>
+                            <torsional>
+                                <coefficient>1000.0</coefficient>
+                                <patch_radius>0.1</patch_radius>
+                            </torsional>
+                        </friction>
+                    </surface>
+                </collision>
+            </link>
+        </model>
+        <joint name="belt_joint" type="prismatic">
+            <parent>conveyorbelt_fixed_11::belt_visual</parent>
+            <child>conveyorbelt_moving_11::belt_moving</child>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>0.0</lower>
+                    <upper>0.01</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin name="ros2_conveyorbelt_plugin_11" filename="libros2_conveyorbelt_plugin.so" >
+            <ros>
+                <namespace>cv11</namespace>
+            </ros>
+            <max_velocity>1.0</max_velocity>
+            <publish_rate>1000</publish_rate>
+        </plugin>
+    </model>
+
+    <model name='shelf_D'>
+      <include>
+        <uri>model://aws_robomaker_warehouse_ShelfD_01</uri>
+        <pose>6.583586 -1.207822 0 0 0 -1.581161</pose>
+      </include>
+    </model>
+
+    <model name='trans_pallet'>
+      <include>
+        <uri>model://aws_robomaker_warehouse_PalletJackB_01</uri>
+        <pose>6.486463 -0.122195 0 0 0 0</pose>
+      </include>
+    </model>
+
+
+    <model name="box">
+      <pose>-2.568433 -1.219785 2.747632 0 1.57 0</pose>
+      <link name="sensor_link">
+        <gravity>false</gravity>
+        <!-- <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size> 
+            </box>
+          </geometry>
+        </collision> -->
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size> 
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Yellow</name> 
+            </script>
+          </material>
+        </visual>
+        
+        <sensor name="lidar_scan" type="ray">
+            <always_on>true</always_on>
+            <visualize>true</visualize>
+            <pose>0.0 0 0 0 0 0</pose>
+            <update_rate>40</update_rate>
+            <ray>
+              <scan>
+                <horizontal>
+                  <samples>1</samples>
+                  <resolution>1</resolution>        <!-- This is a very important for one sample ray I think ... -->
+                  <min_angle>0</min_angle>
+                  <max_angle>0</max_angle>
+                </horizontal>
+              </scan>
+              <range>
+                <min>0.01</min>
+                <max>10</max>
+                <resolution>0.005</resolution>
+              </range>
+              <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </ray>
+            
+              <plugin name="lidar_plugin" filename="libgazebo_ros_ray_sensor.so">
+                <frameName>sensor_link</frameName>
+                <ros>
+                  <namespace>lidar_scan</namespace>
+                  <remapping>~/out:=box_scan</remapping>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>head</frame_name>
+              </plugin> 
+            
+          </sensor>
+        
+        </link> 
+    </model>
 
     
 

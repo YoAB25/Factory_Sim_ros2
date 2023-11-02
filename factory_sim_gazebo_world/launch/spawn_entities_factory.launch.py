@@ -57,11 +57,26 @@ def generate_launch_description():
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-topic', '/robot_description', '-entity', 'factory__'],
+        arguments=['-topic', '/robot_description', '-entity', 'mobile_robot'],
         output='screen'
     )
+
+    # Spawn the TB3 from its own launch file
+    tb3_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('turtlebot3_gazebo'),
+            'launch', 'spawn_turtlebot3.launch.py')]),
+            launch_arguments={
+                'x_pose': '3.5',
+                'y_pose': '2.5',
+                }.items()
+    )
+  
     return LaunchDescription(
         [gazebo,
         node_robot_state_publisher,
-        spawn_entity]
+        spawn_entity,
+        tb3_launch,
+        ]
     )
+
